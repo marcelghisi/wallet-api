@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService{
   public Optional<User> findByEmail(String s) {
     return userRepository.findByEmailEquals(s);
   }
+
+  @Override
+  public Optional<User> save(User convert) {
+    return Optional.ofNullable(userRepository.save(convert));
+  }
 }

@@ -5,4 +5,6 @@ import java.util.Optional;
 
 public interface UserService {
   public Optional<User> findByEmail(String s);
+
+  Optional<User> save(User convert);
 }
