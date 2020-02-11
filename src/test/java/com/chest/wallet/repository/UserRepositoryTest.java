@@ -28,7 +28,7 @@ public class UserRepositoryTest {
 
   @AfterEach
   public void tearDown() {
-
+    userRepository.deleteAll();
   }
 
   @Test
