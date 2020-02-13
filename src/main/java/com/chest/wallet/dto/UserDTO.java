@@ -19,7 +19,7 @@ public class UserDTO {
   @Email(message = "Email inválido")
   private String email;
 
-  @Size(min = 5, max = 50, message = "Name 3 to 50")
+  @Size(min = 3, max = 50, message = "Name 3 to 50")
   private String name;
 
   @NotNull

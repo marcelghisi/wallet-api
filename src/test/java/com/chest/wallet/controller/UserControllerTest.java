@@ -67,15 +67,10 @@ public class UserControllerTest {
   @Test
   public void testUserInvalid() throws Exception {
 
-    BDDMockito.given(userService.save(Mockito.any())).willReturn(Optional.of(getMockUser()));
-
     mockMvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID,NAME,"EMAIL",PASSWORD)).contentType(
         MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isBadRequest())
-        .andExpect(jsonPath("$.data.id").value(ID))
-        .andExpect(jsonPath("$.data.name").value(NAME))
-        .andExpect(jsonPath("$.data.email").value(EMAIL))
-        .andExpect(jsonPath("$.data.password").value(PASSWORD));
+        .andExpect(jsonPath("$.errors[0]").value("Email inválido"));
   }
 
 }
