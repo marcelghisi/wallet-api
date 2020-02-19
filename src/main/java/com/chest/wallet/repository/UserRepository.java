@@ -1,4 +1,4 @@
-package com.chest.wallet.domain.repository;
+package com.chest.wallet.repository;
 
 import com.chest.wallet.domain.User;
 import java.util.Optional;

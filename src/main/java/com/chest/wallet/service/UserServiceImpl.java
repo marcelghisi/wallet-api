@@ -1,7 +1,7 @@
 package com.chest.wallet.service;
 
 import com.chest.wallet.domain.User;
-import com.chest.wallet.domain.repository.UserRepository;
+import com.chest.wallet.repository.UserRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

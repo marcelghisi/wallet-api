@@ -1,7 +1,6 @@
 package com.chest.wallet.repository;
 
 import com.chest.wallet.domain.User;
-import com.chest.wallet.domain.repository.UserRepository;
 import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;

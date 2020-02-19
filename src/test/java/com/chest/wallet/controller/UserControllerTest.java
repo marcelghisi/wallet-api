@@ -42,7 +42,7 @@ public class UserControllerTest {
   MockMvc mockMvc;
 
   public User getMockUser(){
-    return User.builder().id(123456L).email("marcel.ghisi@gmail.com").name(NAME).password("123456").build();
+    return User.builder().id(123456L).email("marcel.ghisi@gmail.com").name(NAME).build();
   }
   public static String getJsonPayload(String id, String name, String email,String password) throws JsonProcessingException {
     UserDTO userDTO = UserDTO.builder().id(id).name(name).email(email).password(password).build();
@@ -61,7 +61,7 @@ public class UserControllerTest {
         .andExpect(jsonPath("$.data.id").value(ID))
         .andExpect(jsonPath("$.data.name").value(NAME))
         .andExpect(jsonPath("$.data.email").value(EMAIL))
-        .andExpect(jsonPath("$.data.password").value(PASSWORD));
+        .andExpect(jsonPath("$.data.password").doesNotExist());
   }
 
   @Test

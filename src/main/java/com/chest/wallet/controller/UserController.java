@@ -4,6 +4,7 @@ import com.chest.wallet.domain.User;
 import com.chest.wallet.dto.UserDTO;
 import com.chest.wallet.response.Response;
 import com.chest.wallet.service.UserService;
+import com.chest.wallet.util.BCrypto;
 import java.util.Optional;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +38,10 @@ public class UserController {
   }
 
   private User convert(UserDTO user){
-    return User.builder().email(user.getEmail()).password(user.getPassword()).name(user.getName()).build();
+    return User.builder().email(user.getEmail()).password(BCrypto.getHash(user.getPassword())).name(user.getName()).build();
   }
   private UserDTO convert(User user){
-    return UserDTO.builder().id(user.getId().toString()).email(user.getEmail()).name(user.getName()).password(user.getPassword()).build();
+    return UserDTO.builder().id(user.getId().toString()).email(user.getEmail()).name(user.getName()).build();
   }
 
 }
